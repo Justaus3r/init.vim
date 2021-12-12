@@ -1,2 +1,2 @@
 # init.vim
-Vim **terrible** scipt for my neovim configuration
+A **terrible** vim scipt for my neovim configuration
