@@ -25,7 +25,8 @@ function validate_runtime_dependencies {
         printf "Xclip not found,installing...\n"
         yes | sudo pacman -S xclip
     fi
-
+    # Assumes that pip is installed
+    python3 -m pip install yapf pynvim
 }
 
 
@@ -44,3 +45,4 @@ init_nvim_conf
 validate_runtime_dependencies
 validate_vim-plug
 printf "Done..\n"
+
