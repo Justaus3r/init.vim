@@ -1,0 +1,21 @@
+"  ---------------------------
+" | Custom defined functions |
+"  ---------------------------
+
+" function Yank_to_sys_clipboard()
+"     y:call system("xclip -selection clipboard", @")<CR>   
+"     echon ''
+" endfunction
+
+" function Is_previous_line_empty()
+"     return strchars(getbufline(bufnr('%'),line('.')-1)[0]) > 0
+" endfunction 
+
+" function Spawn_shell()
+"     23sp
+"     Cww
+"     term
+"     startinsert
+" endfunction    
+
+
