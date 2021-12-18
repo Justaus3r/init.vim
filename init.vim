@@ -11,7 +11,7 @@ set incsearch " Use incremental search,i.e jump to first occurrences while searc
 set autoread " Automatically reload the file,if it is changed by external source
 set expandtab " Expand Tabs to spaces
 set background=dark "Set background for theme
-
+ 
 " powerline fonts don't work out of the box,we gotta install the patch fonts
 " as described here(https://github.com/vim-airline/vim-airline#user-content-integrating-with-powerline-fonts) and then set following var to 1.if that doesn't work this(https://vi.stackexchange.com/a/3363) might help.
 let g:airline_powerline_fonts = 1
@@ -23,8 +23,6 @@ let g:jedi#completions_enabled = 0
 " open the go-to function" in split, not another buffer
 let g:jedi#use_splits_not_buffers = "right"
 
-
-
 "  ---------------------------
 " | Custom defined functions |
 "  ---------------------------
@@ -33,16 +31,18 @@ let g:jedi#use_splits_not_buffers = "right"
 "     y:call system("xclip -selection clipboard", @")<CR>   
 "     echon ''
 " endfunction
- 
+
+" function Is_previous_line_empty()
+"     return strchars(getbufline(bufnr('%'),line('.')-1)[0]) > 0
+" endfunction 
+
+
+
 "  ---------- 
 " | Mappings |
 "  ---------- 
  
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>" " completion on pressing tab
-" Pretty ugly i know,xDD.tho i only need map for these two modes so ain't that
-" bad,is it?
-inoremap jj <esc> " map ESC to jj for insert mode   
-vnoremap jj <esc> " map ESc for visual mode 
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>" " completion on pressing tab 
 map <leader>l ggVG " Select all text
 " Copy to system clipboard using external binary:https://stackoverflow.com/a/51682050
 " Requires xclip to be installed
