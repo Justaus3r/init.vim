@@ -5,5 +5,3 @@ function! Spawn_shell()
     startinsert
 endfunction    
 
-inoremap <leader>t  <esc>:call Spawn_shell()<CR>
-
