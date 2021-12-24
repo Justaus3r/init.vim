@@ -9,4 +9,6 @@ map <c-c> y:call system("xclip -selection clipboard", @")<CR>:echon ''<CR>
 
 tnoremap <Esc> <C-\><C-n> "Revert back from terminal mode to normal mode
 
-inoremap <leader>t  <esc>:call Spawn_shell()<CR>
+" Setting mapping for insert and normal mode for spawning shell
+inoremap <leader>t  <esc>:call Spawn_shell()<CR> 
+nmap <leader>t <esc>:call Spawn_shell()<CR>
