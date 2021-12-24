@@ -1,3 +1,8 @@
+function Multi_mode_mapping(lhs, rhs, modes)
+    for mode in a:modes
+        execute mode.'noremap' a:lhs a:rhs
+    endfor
+endfunction
 
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>" " completion on pressing tab 
 
@@ -9,6 +14,5 @@ map <c-c> y:call system("xclip -selection clipboard", @")<CR>:echon ''<CR>
 
 tnoremap <Esc> <C-\><C-n> "Revert back from terminal mode to normal mode
 
-" Setting mapping for insert and normal mode for spawning shell
-inoremap <leader>t  <esc>:call Spawn_shell()<CR> 
-nmap <leader>t <esc>:call Spawn_shell()<CR>
+call Multi_mode_mapping('<leader>t', '<esc>:call Spawn_shell()<CR>', ['i','n'])
+call Multi_mode_mapping('<leader>z', '<esc>:NERDTree<CR>', ['i','n'])
