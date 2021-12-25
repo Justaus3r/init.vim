@@ -7,7 +7,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdcommenter'
 Plug 'sbdchd/neoformat'
 Plug 'jiangmiao/auto-pairs'
-Plug 'davidhalter/jedi-vim' " Only for code jump,definition
 Plug 'scrooloose/nerdtree'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'tmhedberg/SimpylFold'
