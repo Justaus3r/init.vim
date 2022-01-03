@@ -4,6 +4,8 @@
 
 NVIM_CONF_PATH="$HOME/.config/nvim/"
 PLUGGED_PATH="$HOME/.local/share/nvim/site/autoload/plug.vim"
+PIP_CMD="python3 -m pip"
+PIP_DOWNLOAD_LINK="https://bootstrap.pypa.io/get-pip.py"
 
 function init_nvim_conf {
     if [ -d $NVIM_CONF_PATH ];then
@@ -13,6 +15,16 @@ function init_nvim_conf {
 	mkdir $NVIM_CONF_PATH
         cp -r configs/ init.vim $NVIM_CONF_PATH
    fi
+}
+
+function install_pip {
+	$PIP_CMD 1> /dev/null
+	if [ $? -eq 0 ];then
+		return
+	fi
+	wget $PIP_DOWNLOAD_LINK
+	python3 get-pip.py
+	rm get-pip.py
 }
 
 function validate_runtime_dependencies {
@@ -25,7 +37,8 @@ function validate_runtime_dependencies {
         printf "Xclip not found,installing...\n"
         yes | sudo pacman -S xclip
     fi
-    # Assumes that pip is installed
+    # install pip if not installed
+    install_pip
     python3 -m pip install yapf pynvim
 }
 
