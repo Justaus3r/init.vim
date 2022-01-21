@@ -7,7 +7,7 @@ PLUGGED_PATH="$HOME/.local/share/nvim/site/autoload/plug.vim"
 PIP_CMD="python3 -m pip"
 PIP_DOWNLOAD_LINK="https://bootstrap.pypa.io/get-pip.py"
 
-function init_nvim_conf {
+init_nvim_conf() {
     if [ -d $NVIM_CONF_PATH ];then
 	cp -r configs/ init.vim $NVIM_CONF_PATH
     else
@@ -17,7 +17,7 @@ function init_nvim_conf {
    fi
 }
 
-function install_pip {
+install_pip() {
 	$PIP_CMD 1> /dev/null
 	if [ $? -eq 0 ];then
 		return
@@ -27,7 +27,7 @@ function install_pip {
 	rm get-pip.py
 }
 
-function validate_runtime_dependencies {
+validate_runtime_dependencies() {
     if ! [ -x "$(command -v node )" ];then
         printf "Nodejs not found,Downloading+Installing...\n"
         curl -sL install-node.vercel.app/lts |sudo bash
@@ -43,7 +43,7 @@ function validate_runtime_dependencies {
 }
 
 
-function validate_vim-plug {
+validate_vim-plug() {
     if [ -e $PLUGGED_PATH ];then
         return 0
     else
