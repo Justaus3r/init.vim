@@ -9,6 +9,7 @@ Plug 'sbdchd/neoformat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'Integralist/vim-mypy',  {'branch': 'master'}
 # Plug 'tmhedberg/SimpylFold'
 Plug 'morhetz/gruvbox'
 Plug 'andweeb/presence.nvim'
