@@ -23,5 +23,3 @@ let g:jedi#use_splits_not_buffers = "right"
 
 "Colorscheme
 autocmd vimenter * ++nested colorscheme gruvbox
-
-

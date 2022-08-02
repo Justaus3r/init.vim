@@ -3,5 +3,4 @@ function! Spawn_shell()
     Cww
     term
     startinsert
-endfunction    
-
+endfunction

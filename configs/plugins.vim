@@ -14,4 +14,3 @@ Plug 'Justaus3r/vim-mypy',  {'branch': 'master'}
 Plug 'morhetz/gruvbox'
 Plug 'andweeb/presence.nvim'
 call plug#end()
-
