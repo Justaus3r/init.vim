@@ -4,14 +4,26 @@ function Multi_mode_mapping(lhs, rhs, modes)
     endfor
 endfunction
 
+function Set_clipboard()
+    if has('unix') || has('macunix')
+        let l:cmd = "xclip -selection clipboard"
+    else
+        " Dunno why but piping wasn't working so
+        " had to use this half-ass way...
+        let l:buffer=@
+        let l:filepath = stdpath('config') . '\configs\tmpfile'
+        call writefile(split(l:buffer, "\n", 1), l:filepath, 'b')
+        let l:cmd = "copyq copy - <" . ' ' . l:filepath
+    endif
+    call system(l:cmd)
+    call system('del'. ' ' . l:filepath)
+endfunction
+
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>" " completion on pressing tab 
 
 map <leader>l ggVG " Select all text
 
-" Copy to system clipboard using external binary:https://stackoverflow.com/a/51682050
-" Requires xclip to be installed
-map <c-c> y:call system("xclip -selection clipboard", @")<CR>:echon ''<CR>
-
+map <c-c> y:call Set_clipboard()<CR>:echon ''<CR>
 tnoremap <Esc> <C-\><C-n> "Revert back from terminal mode to normal mode
 
 call Multi_mode_mapping('<leader>t', '<esc>:call Spawn_shell()<CR>', ['i','n'])
