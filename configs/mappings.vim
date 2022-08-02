@@ -19,7 +19,13 @@ function Set_clipboard()
     call system('del'. ' ' . l:filepath)
 endfunction
 
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>" " completion on pressing tab 
+" Trigger coc tab completion 
+inoremap <silent><expr> <TAB>
+    \ coc#pum#visible() ? coc#_select_confirm() :
+    \ coc#expandableOrJumpable() ?
+    \ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
 
 map <leader>l ggVG " Select all text
 
