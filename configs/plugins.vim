@@ -5,7 +5,16 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline' 
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdcommenter'
-Plug 'sbdchd/neoformat'
+Plug 'vim-ctrlspace/vim-ctrlspace'
+
+" Using google/vim-codefmt instead
+" Plug 'sbdchd/neoformat'
+
+" Both vim-maktaba and vim-glaive are needed for vim-codefmt
+Plug 'google/vim-codefmt'
+Plug 'google/vim-maktaba'
+Plug 'google/vim-glaive'
+
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
