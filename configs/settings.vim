@@ -22,4 +22,5 @@ let g:jedi#completions_enabled = 0
 let g:jedi#use_splits_not_buffers = "right"
 
 "Colorscheme
-autocmd vimenter * ++nested colorscheme gruvbox
+" now using iceberg instead of gruvbox
+autocmd vimenter * ++nested colorscheme iceberg
