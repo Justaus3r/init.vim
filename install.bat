@@ -30,7 +30,7 @@ echo NodeJs: OK
 color 0c
 echo NodeJs: Not Installed
 echo Installing nodejs...
-winget install OpenJS.NodeJS > nul 2> nul 
+cinst nodejs > nul 2> nul 
 if !errorlevel! == 0 (
 color 0a
 echo NodeJs installed successfully!,you need to restart the shell to take effect.
