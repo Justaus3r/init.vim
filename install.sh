@@ -6,6 +6,26 @@ NVIM_CONF_PATH="$HOME/.config/nvim/"
 PLUGGED_PATH="$HOME/.local/share/nvim/site/autoload/plug.vim"
 PIP_CMD="python3 -m pip"
 PIP_DOWNLOAD_LINK="https://bootstrap.pypa.io/get-pip.py"
+PACKMAN_CMD="NONE"
+
+get_system_packman(){
+	if [ $(command -v pacman) ];then
+		PACKMAN_CMD="pacman -Syu "
+	elif [ $(command -v apt) ];then
+		PACKMAN_CMD="apt install "
+	elif [ $(command -v apt-get) ];then
+		PACKMAN_CMD="apt-get install "
+	else
+		printf "Could not determine the system package manager!\nPlease enter the install command for your system's package manager(without sudo):\n>>"
+		read PACKMAN_CMD
+		return	
+	fi
+	read -p "Using package manager command '$PACKMAN_CMD' , Continue[Y/N]:" opt
+	if [ $opt == "N" ];then
+		read -p "Enter package manager command(without sudo): " PACKMAN_CMD
+	fi
+}
+
 
 init_nvim_conf() {
     if [ -d $NVIM_CONF_PATH ];then
@@ -35,7 +55,7 @@ validate_runtime_dependencies() {
     
     if ! [ -x "$(command -v xclip )" ];then
         printf "Xclip not found,installing...\n"
-        yes | sudo pacman -S xclip
+        yes | sudo $PACKMAN_CMD xclip
     fi
     # install pip if not installed
     install_pip
@@ -54,6 +74,8 @@ validate_vim-plug() {
 }
 
 
+
+get_system_packman
 init_nvim_conf
 validate_runtime_dependencies
 validate_vim-plug
