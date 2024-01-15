@@ -7,6 +7,7 @@ set incsearch " Use incremental search,i.e jump to first occurrences while searc
 set autoread " Automatically reload the file,if it is changed by external source
 set expandtab " Expand Tabs to spaces
 set background=dark "Set background for theme
+set number relativenumber "Set line numbering to hybrid, for absolute -> set number norelativenumber
 
 
 " powerline fonts don't work out of the box,we gotta install the patch fonts
