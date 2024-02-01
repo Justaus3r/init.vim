@@ -1,4 +1,3 @@
-set number " display line-no
 set ignorecase " Ignore case's while searching strings
 set tabstop=4 " set tab to 4 spaces
 set shiftwidth=4 " To set an indentation to single TAB
