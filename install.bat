@@ -30,7 +30,7 @@ echo NodeJs: OK
 color 0c
 echo NodeJs: Not Installed
 echo Installing nodejs...
-cinst nodejs > nul 2> nul 
+choco install nodejs > nul 2> nul 
 if !errorlevel! == 0 (
 color 0a
 echo NodeJs installed successfully!,you need to restart the shell to take effect.
@@ -53,7 +53,8 @@ set "filename[4]=settings.vim"
 set "filename[5]=shell.vim"
 for %%a in (%files%) do (
 FOR /F "tokens=*" %%g IN ('call echo %%filename[!index!]%%') do (SET filename=%%g)
-powershell "(Invoke-WebRequest -Uri %%a -UseBasicParsing -Method "GET").Content >'%USERPROFILE%\\!filename!'"
+powershell "(Invoke-WebRequest -Uri %%a -UseBasicParsing -Method "GET").Content | Out-File -Encoding utf8NoBOM '%USERPROFILE%\\!filename!'"
+REM powershell "(Invoke-WebRequest -Uri %%a -UseBasicParsing -Method "GET").Content >'%USERPROFILE%\\!filename!'"
 set /A "index+=1"
 )
 if %errorlevel% == 0 (
