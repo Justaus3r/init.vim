@@ -26,4 +26,7 @@ Plug 'Justaus3r/vim-mypy',  {'branch': 'master'}
 " Plug 'morhetz/gruvbox'
 
 Plug 'andweeb/presence.nvim'
+
+" For Dockerfile linting
+Plug 'ekalinin/Dockerfile.vim'
 call plug#end()
