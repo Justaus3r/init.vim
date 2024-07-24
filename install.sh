@@ -2,6 +2,7 @@
 
 # A terrible user-script for autamating stuff
 
+DOT_CONF="$HOME/.config/"
 NVIM_CONF_PATH="$HOME/.config/nvim/"
 PLUGGED_PATH="$HOME/.local/share/nvim/site/autoload/plug.vim"
 PIP_CMD="python3 -m pip"
@@ -28,6 +29,10 @@ get_system_packman(){
 
 
 init_nvim_conf() {
+    if [[ ! -d $DOT_CONF ]];then
+        printf "~/.config not found!. Creating one...\n"
+        mkdir $DOT_CONF
+    fi
     if [ -d $NVIM_CONF_PATH ];then
 	cp -r configs/ init.vim $NVIM_CONF_PATH
     else
