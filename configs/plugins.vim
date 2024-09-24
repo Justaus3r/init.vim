@@ -29,4 +29,7 @@ Plug 'andweeb/presence.nvim'
 
 " For Dockerfile linting
 Plug 'ekalinin/Dockerfile.vim'
+
+Plug 'alvan/vim-closetag'
+
 call plug#end()

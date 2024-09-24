@@ -24,3 +24,7 @@ let g:jedi#use_splits_not_buffers = "right"
 "Colorscheme
 " now using iceberg instead of gruvbox
 autocmd vimenter * ++nested colorscheme iceberg
+
+"Vim CLoseTags
+let g:closetag_filenames = "*.html"
+let g:closetag_shortcut = '>'
