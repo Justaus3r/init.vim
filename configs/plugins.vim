@@ -6,7 +6,13 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-ctrlspace/vim-ctrlspace'
-Plug 'cocopon/iceberg.vim'
+
+"Colorscheme
+"Plug 'cocopon/iceberg.vim'
+" now using cappucin/nvim
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+
+
 
 " Using google/vim-codefmt instead
 " Plug 'sbdchd/neoformat'

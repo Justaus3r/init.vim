@@ -23,7 +23,10 @@ let g:jedi#use_splits_not_buffers = "right"
 
 "Colorscheme
 " now using iceberg instead of gruvbox
-autocmd vimenter * ++nested colorscheme iceberg
+"autocmd vimenter * ++nested colorscheme iceberg
+" now using cappucin/nvim
+colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+
 
 "Vim CLoseTags
 let g:closetag_filenames = "*.html"

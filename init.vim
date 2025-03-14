@@ -5,8 +5,8 @@
 "  -----------------------------
  
 let g:config_files = [ 
-    \ "settings.vim",
     \ "plugins.vim",
+    \ "settings.vim",
     \ "commands.vim",
     \ "mappings.vim",
     \ "shell.vim",
